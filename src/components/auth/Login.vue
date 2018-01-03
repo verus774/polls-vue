@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import {HTTP} from '../../http/http-auth'
 
   export default {
     data () {
@@ -35,12 +35,12 @@
     },
     methods: {
       onSubmit () {
-        axios.post('https://polls2.herokuapp.com/auth/login', {username: this.username, password: this.password})
-          .then(response => {
-            console.log(response.data.data)
+        HTTP.post('login', {username: this.username, password: this.password})
+          .then(res => {
+            this.$router.push('polls')
           })
-          .catch(error => {
-            console.log(error)
+          .catch(err => {
+            console.log(err)
           })
       }
     }

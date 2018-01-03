@@ -25,7 +25,7 @@
 
 <script>
   import RoomItem from './RoomItem'
-  import {HTTP} from '../../http-common'
+  import {HTTP} from '../../http/http-common'
 
   export default {
     components: {RoomItem},
