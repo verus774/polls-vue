@@ -14,8 +14,11 @@
           Student polls
         </router-link>
       </div>
-
-
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <router-link tag="li" to="/login" active-class="active" exact><a>Login</a></router-link>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>

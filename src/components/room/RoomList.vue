@@ -25,7 +25,7 @@
 
 <script>
   import RoomItem from './RoomItem'
-  import axios from 'axios'
+  import {HTTP} from '../../http-common'
 
   export default {
     components: {RoomItem},
@@ -34,14 +34,19 @@
         rooms: []
       }
     },
+    methods: {
+      loadData () {
+        HTTP.get('rooms')
+          .then(response => {
+            this.rooms = response.data.data
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
+    },
     created () {
-      axios.get('https://polls2.herokuapp.com/api/v1/rooms')
-        .then(response => {
-          this.rooms = response.data.data
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      this.loadData()
     }
   }
 </script>
