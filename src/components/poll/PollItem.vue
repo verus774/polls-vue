@@ -22,9 +22,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['poll']
-  }
+export default {
+  props: ['poll']
+}
 </script>
 
 <style scoped>

@@ -24,31 +24,31 @@
 </template>
 
 <script>
-  import PollItem from './PollItem'
-  import {HTTP} from '../../http/http-common'
+import PollItem from './PollItem'
+import {HTTP} from '../../http/http-common'
 
-  export default {
-    components: {PollItem},
-    data () {
-      return {
-        polls: []
-      }
-    },
-    methods: {
-      loadData () {
-        HTTP.get('polls')
-          .then(res => {
-            this.polls = res.data.data
-          })
-          .catch(err => {
-            console.log(err)
-          })
-      }
-    },
-    created () {
-      this.loadData()
+export default {
+  components: {PollItem},
+  data () {
+    return {
+      polls: []
     }
+  },
+  methods: {
+    loadData () {
+      HTTP.get('polls')
+        .then(res => {
+          this.polls = res.data.data
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  },
+  created () {
+    this.loadData()
   }
+}
 </script>
 
 <style scoped>

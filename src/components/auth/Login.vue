@@ -24,27 +24,27 @@
 </template>
 
 <script>
-  import {HTTP} from '../../http/http-auth'
+import {HTTP} from '../../http/http-auth'
 
-  export default {
-    data () {
-      return {
-        username: '',
-        password: ''
-      }
-    },
-    methods: {
-      onSubmit () {
-        HTTP.post('login', {username: this.username, password: this.password})
-          .then(res => {
-            this.$router.push('polls')
-          })
-          .catch(err => {
-            console.log(err)
-          })
-      }
+export default {
+  data () {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    onSubmit () {
+      HTTP.post('login', {username: this.username, password: this.password})
+        .then(res => {
+          this.$router.push('polls')
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
+}
 </script>
 
 <style scoped>

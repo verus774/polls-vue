@@ -8,9 +8,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['room']
-  }
+export default {
+  props: ['room']
+}
 </script>
 
 <style scoped>

@@ -24,31 +24,31 @@
 </template>
 
 <script>
-  import RoomItem from './RoomItem'
-  import {HTTP} from '../../http/http-common'
+import RoomItem from './RoomItem'
+import {HTTP} from '../../http/http-common'
 
-  export default {
-    components: {RoomItem},
-    data () {
-      return {
-        rooms: []
-      }
-    },
-    methods: {
-      loadData () {
-        HTTP.get('rooms')
-          .then(response => {
-            this.rooms = response.data.data
-          })
-          .catch(error => {
-            console.log(error)
-          })
-      }
-    },
-    created () {
-      this.loadData()
+export default {
+  components: {RoomItem},
+  data () {
+    return {
+      rooms: []
     }
+  },
+  methods: {
+    loadData () {
+      HTTP.get('rooms')
+        .then(response => {
+          this.rooms = response.data.data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+  },
+  created () {
+    this.loadData()
   }
+}
 </script>
 
 <style scoped>
