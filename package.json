@@ -9,13 +9,15 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
+    "build-prod": "node build/build.js --prod",
     "deploy": "firebase deploy"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",

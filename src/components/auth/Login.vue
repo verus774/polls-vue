@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import {HTTP} from '../../http/http-auth'
-
 export default {
   data () {
     return {
@@ -35,13 +33,8 @@ export default {
   },
   methods: {
     onSubmit () {
-      HTTP.post('login', {username: this.username, password: this.password})
-        .then(res => {
-          this.$router.push('polls')
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      this.$store.dispatch('login', {username: this.username, password: this.password})
+        .then(() => this.$router.push('polls'))
     }
   }
 }

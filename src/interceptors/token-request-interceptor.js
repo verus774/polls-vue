@@ -1,5 +1,7 @@
+import store from '../store'
+
 export default req => {
-  const token = localStorage.getItem('access_token')
+  const token = store.getters.accessToken
   if (token) {
     req.headers.common['Authorization'] = token
   }
